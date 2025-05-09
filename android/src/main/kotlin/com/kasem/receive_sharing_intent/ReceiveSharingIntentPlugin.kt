@@ -93,17 +93,6 @@ class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandl
                 eventSinkMedia?.success(latestMedia?.toString())
             }
 
-            // Opening URL
-            intent.action == Intent.ACTION_VIEW -> {
-                val value = JSONArray(
-                        listOf(JSONObject()
-                                .put("path", intent.dataString)
-                                .put("type", MediaType.URL.value))
-                )
-                if (initial) initialMedia = value
-                latestMedia = value
-                eventSinkMedia?.success(latestMedia?.toString())
-            }
 
             // Opening email contact
             intent.scheme?.startsWith("mailto") == true &&
