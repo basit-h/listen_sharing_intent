@@ -113,10 +113,6 @@ class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandl
         if (intent == null) return null
 
         return when (intent.action) {
-            Intent.ACTION_VIEW -> {
-                val uri = intent.data
-                toJsonObject(uri, null, intent.type)?.let { JSONArray(listOf(it)) }
-            }
 
             Intent.ACTION_SEND -> {
                 val uri = intent.parcelable<Uri>(Intent.EXTRA_STREAM)
