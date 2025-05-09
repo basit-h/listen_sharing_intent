@@ -123,6 +123,7 @@ open class RSIShareViewController: SLComposeServiceViewController {
         let customAppGroupId = Bundle.main.object(forInfoDictionaryKey: kAppGroupIdKey) as? String
 
         appGroupId = customAppGroupId ?? defaultAppGroupId
+
     }
 
     private func handleMedia(

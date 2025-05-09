@@ -84,8 +84,7 @@ class ReceiveSharingIntentPlugin : FlutterPlugin, ActivityAware, MethodCallHandl
         when {
             // Sharing or opening media (image, video, text, file)
             intent.type != null && (
-                    intent.action == Intent.ACTION_VIEW
-                            || intent.action == Intent.ACTION_SEND
+                     intent.action == Intent.ACTION_SEND
                             || intent.action == Intent.ACTION_SEND_MULTIPLE) -> {
 
                 val value = getMediaUris(intent)
